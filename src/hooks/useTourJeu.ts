@@ -18,6 +18,10 @@ export function useTourJeu(nombreJoueurs: number) {
     dispatch({ type: "INVERSER_SENS" });
   };
 
+  const terminerPartie = () => {
+    dispatch({ type: "TERMINER_PARTIE" });
+  };
+
   const reinitialiserPartie = () => {
     dispatch({ type: "REINITIALISER_PARTIE" });
   };
@@ -27,6 +31,7 @@ export function useTourJeu(nombreJoueurs: number) {
     demarrerPartie,
     passerAuTourSuivant,
     inverserSens,
+    terminerPartie,
     reinitialiserPartie,
   };
 }

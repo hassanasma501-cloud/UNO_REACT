@@ -10,7 +10,10 @@ export type ActionPartie =
   | { type: "DEMARRER_PARTIE" }
   | { type: "TOUR_SUIVANT"; nombreJoueurs: number }
   | { type: "INVERSER_SENS" }
+  | { type: "TERMINER_PARTIE" }
   | { type: "REINITIALISER_PARTIE" };
+
+
 
 export const etatInitialPartie: EtatPartie = {
   indexJoueurActif: 0,
@@ -50,6 +53,12 @@ export function reducerPartie(
         ...etat,
         sensJeu: etat.sensJeu === 1 ? -1 : 1,
       };
+
+    case "TERMINER_PARTIE":
+  return {
+    ...etat,
+    statut: "terminee",
+  };
 
     case "REINITIALISER_PARTIE":
       return etatInitialPartie;
