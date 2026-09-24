@@ -1,0 +1,35 @@
+{
+  "titre": "Règles du UNO",
+  "sections": [
+    {
+      "id": 1,
+      "titre": "Objectif du jeu",
+      "contenu": "Être le premier joueur à se débarrasser de toutes ses cartes. Chaque joueur commence avec 7 cartes en main."
+    },
+    {
+      "id": 2,
+      "titre": "Déroulement d'un tour",
+      "contenu": "À chaque tour, le joueur doit poser une carte qui correspond à la carte du dessus de la pile de défausse : même couleur, même chiffre ou même symbole. Si le joueur ne peut pas jouer, il doit piocher une carte."
+    },
+    {
+      "id": 3,
+      "titre": "Cartes spéciales",
+      "contenu": "Passer le tour (Skip) : le joueur suivant passe son tour. Inversion (Reverse) : le sens du jeu est inversé. +2 (Draw Two) : le joueur suivant pioche 2 cartes et passe son tour."
+    },
+    {
+      "id": 4,
+      "titre": "Cartes Joker",
+      "contenu": "Joker (Wild) : peut être posé sur n'importe quelle carte, le joueur choisit la couleur. Joker +4 (Wild Draw Four) : le joueur suivant pioche 4 cartes, passe son tour, et le joueur qui a posé la carte choisit la couleur."
+    },
+    {
+      "id": 5,
+      "titre": "Dire UNO",
+      "contenu": "Quand un joueur n'a plus qu'une seule carte en main, il doit crier « UNO ! ». S'il oublie et qu'un autre joueur le remarque, il doit piocher 2 cartes de pénalité."
+    },
+    {
+      "id": 6,
+      "titre": "Fin de la partie",
+      "contenu": "La partie se termine quand un joueur a posé toutes ses cartes. Les points des cartes restantes dans les mains des autres joueurs sont ajoutés au score du gagnant."
+    }
+  ]
+}
