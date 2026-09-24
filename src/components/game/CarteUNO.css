@@ -1,0 +1,98 @@
+.carte-uno {
+  position: relative;
+  width: 110px;
+  height: 165px;
+  border: 6px solid white;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: white;
+  cursor: default;
+  overflow: hidden;
+}
+
+.carte-uno::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 130px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  transform: rotate(35deg);
+  top: 12px;
+  left: 10px;
+}
+
+.carte-uno--red {
+  background: #e53935;
+}
+
+.carte-uno--blue {
+  background: #1e88e5;
+}
+
+.carte-uno--green {
+  background: #43a047;
+}
+
+.carte-uno--yellow {
+  background: #fbc02d;
+  color: #222;
+}
+
+.carte-uno--wild {
+  background: conic-gradient(
+    #e53935 0deg 90deg,
+    #1e88e5 90deg 180deg,
+    #43a047 180deg 270deg,
+    #fbc02d 270deg 360deg
+  );
+}
+
+.carte-uno__centre {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  font-style: italic;
+  z-index: 1;
+  color: inherit;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.35);
+}
+
+.carte-uno__coin {
+  position: absolute;
+  z-index: 2;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.carte-uno__coin--haut {
+  top: 10px;
+  left: 10px;
+}
+
+.carte-uno__coin--bas {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+
+.carte-uno--selectionnable {
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.carte-uno--selectionnable:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 14px 22px rgba(0, 0, 0, 0.4);
+}
+
+.carte-uno:disabled {
+  opacity: 1;
+}

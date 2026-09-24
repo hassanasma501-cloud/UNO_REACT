@@ -1,0 +1,129 @@
+.plateau-jeu {
+  min-height: calc(100vh - 80px);
+  padding: 24px;
+  box-sizing: border-box;
+  color: white;
+  background:
+    radial-gradient(
+      circle at center,
+      #278b55 0%,
+      #17663e 55%,
+      #0c3c27 100%
+    );
+}
+
+.plateau-jeu__header {
+  max-width: 900px;
+  margin: 0 auto 32px;
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+}
+
+.plateau-jeu__header > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.plateau-jeu__label {
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.plateau-jeu__tour strong {
+  font-size: 22px;
+}
+
+.plateau-jeu__sens {
+  font-size: 30px;
+}
+
+.plateau-jeu__adversaires {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.adversaire {
+  min-width: 220px;
+  padding: 14px;
+
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.18);
+  border: 2px solid transparent;
+  border-radius: 16px;
+}
+
+.adversaire--actif {
+  border-color: white;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.35);
+}
+
+.adversaire h2 {
+  margin: 0 0 12px;
+}
+
+.adversaire__cartes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.carte-cachee {
+  width: 48px;
+  height: 74px;
+  margin-left: -16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  font-size: 11px;
+  font-weight: 900;
+  font-style: italic;
+
+  background: #111;
+  border: 3px solid white;
+  border-radius: 9px;
+
+  transform: rotate(-3deg);
+}
+
+.carte-cachee:first-child {
+  margin-left: 0;
+}
+
+.carte-cachee:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+@media (max-width: 700px) {
+  .plateau-jeu {
+    padding: 12px;
+  }
+
+  .plateau-jeu__header {
+    gap: 15px;
+    padding: 12px;
+  }
+
+  .plateau-jeu__tour strong {
+    font-size: 16px;
+  }
+
+  .plateau-jeu__adversaires {
+    gap: 15px;
+  }
+}
