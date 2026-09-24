@@ -10,14 +10,13 @@ function Game() {
   const playerName = location.state?.playerName || "Joueur";
 
   const {
-    etat,
-    definirJoueurs,
-    definirPioche,
-    demarrerPartie,
-    piocherCarte,
-    jouerCarte,
-  } = useTourJeu();
-
+  etat,
+  definirJoueurs,
+  definirPioche,
+  demarrerPartie,
+  piocherCarte,
+  jouerCarte,
+} = useTourJeu();
   useEffect(() => {
     const joueurs: Player[] = [
       {
