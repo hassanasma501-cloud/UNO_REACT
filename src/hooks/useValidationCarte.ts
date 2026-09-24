@@ -7,25 +7,47 @@ export function useValidationCarte() {
   const peutJouerCarte = (carte: Card): boolean => {
     const carteDessus = etat.carteDessus;
 
-    // S'il n'y a encore aucune carte sur la table
+    // S'il n'y a encore aucune carte sur la table,
+    // la première carte peut être jouée.
     if (carteDessus === null) {
       return true;
     }
 
-    // Un joker peut être joué sur n'importe quelle carte
+    // Les jokers peuvent être joués sur n'importe quelle carte.
     if (carte.color === "wild") {
       return true;
     }
 
-    const memeCouleur = carte.color === carteDessus.color;
-    const memeType = carte.type === carteDessus.type;
+    // Dans notre version simplifiée, après un joker,
+    // n'importe quelle couleur peut être jouée.
+    if (carteDessus.color === "wild") {
+      return true;
+    }
 
-    const memeValeur =
+    // Même couleur : carte autorisée.
+    if (carte.color === carteDessus.color) {
+      return true;
+    }
+
+    // Pour deux cartes numériques,
+    // il faut que leur valeur soit identique.
+    if (
       carte.type === "number" &&
-      carteDessus.type === "number" &&
-      carte.value === carteDessus.value;
+      carteDessus.type === "number"
+    ) {
+      return carte.value === carteDessus.value;
+    }
 
-    return memeCouleur || memeType || memeValeur;
+    // Pour les cartes spéciales,
+    // le même symbole/type peut être joué.
+    if (
+      carte.type !== "number" &&
+      carteDessus.type !== "number"
+    ) {
+      return carte.type === carteDessus.type;
+    }
+
+    return false;
   };
 
   return {

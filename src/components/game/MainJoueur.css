@@ -1,0 +1,43 @@
+.main-joueur {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.main-joueur__entete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.main-joueur__entete h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.main-joueur__tour {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #111111;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.main-joueur__cartes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.main-joueur__cartes .carte-uno {
+  margin-left: -24px;
+}
+
+.main-joueur__cartes .carte-uno:first-child {
+  margin-left: 0;
+}
