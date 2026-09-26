@@ -20,6 +20,7 @@ export function useTourJeu() {
     });
   };
 
+  
   const demarrerPartie = () => {
     dispatch({ type: "DEMARRER_PARTIE" });
   };
@@ -172,15 +173,15 @@ export function useTourJeu() {
   };
 
   return {
-    etat,
-    definirJoueurs,
-    definirPioche,
-    demarrerPartie,
-    passerAuTourSuivant,
-    inverserSens,
-    piocherCarte,
-    jouerCarte,
-    terminerPartie,
-    reinitialiserPartie,
-  };
+  etat,
+  definirJoueurs,
+  definirPioche,
+  demarrerPartie,
+  passerAuTourSuivant,
+  inverserSens,
+  piocherCarte,
+  jouerCarte,
+  terminerPartie,
+  reinitialiserPartie,
+};
 }
