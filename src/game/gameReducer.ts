@@ -40,11 +40,17 @@ export function reducerPartie(
         joueurs: action.joueurs,
       };
 
-    case "DEFINIR_PIOCHE":
-      return {
-        ...etat,
-        pioche: action.pioche,
-      };
+    case "DEFINIR_PIOCHE": {
+  const [premiereCarte, ...restePioche] = action.pioche;
+
+  return {
+    ...etat,
+    pioche: restePioche,
+    carteDessus: premiereCarte ?? null,
+  };
+}
+
+      
 
     case "DEMARRER_PARTIE":
       return {
