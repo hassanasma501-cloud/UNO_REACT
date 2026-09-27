@@ -1,3 +1,5 @@
+# UNO Online
+
 ## Présentation du projet
 
 **UNO Online** est une version web du jeu UNO.
@@ -454,7 +456,7 @@ Le projet est actuellement disponible dans le dépôt GitHub :
 https://github.com/hassanasma501-cloud/UNO_REACT
 ```
 
-**Adresse de l’application déployée : à compléter avant la soutenance si le déploiement est réalisé.**
+**Application déployée :** https://uno-react-snowy.vercel.app
 
 ---
 
