@@ -16,8 +16,8 @@ function Rules() {
   const [tentative, setTentative] = useState(0);
 
   const { donnees, chargement, erreur } = useFetch<ReglesUNO>(
-    `/api/rules.json?tentative=${tentative}`
-  );
+    `https://api.npoint.io/69e6eeb7fb0b44c947ab?tentative=${tentative}`
+);
 
   if (chargement) {
     return (
