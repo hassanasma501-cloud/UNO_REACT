@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { useValidationCarte } from "../hooks/useValidationCarte";
 import type { Card, Player } from "../types/game";
 import { useTourJeu } from "../hooks/useTourJeu";
 import { PlateauJeu } from "../components/game/PlateauJeu";
@@ -14,9 +14,13 @@ function Game() {
   definirJoueurs,
   definirPioche,
   demarrerPartie,
+  passerAuTourSuivant,
   piocherCarte,
   jouerCarte,
 } = useTourJeu();
+
+const { peutJouerCarte } = useValidationCarte();
+
   useEffect(() => {
     const joueurs: Player[] = [
       {
@@ -85,6 +89,50 @@ function Game() {
     }
   };
 
+  useEffect(() => {
+  if (etat.statut !== "playing") {
+    return;
+  }
+
+  const joueurActif = etat.joueurs[etat.indexJoueurActif];
+
+  if (!joueurActif) {
+    return;
+  }
+
+  // Le joueur avec l'id "1" est le joueur réel.
+  // Les autres jouent automatiquement.
+  if (joueurActif.id === "1") {
+    return;
+  }
+
+  const timer = setTimeout(() => {
+    const carteJouable = joueurActif.cards.find((carte) =>
+      peutJouerCarte(carte)
+    );
+
+    if (carteJouable) {
+      jouerCarte(joueurActif.id, carteJouable);
+      return;
+    }
+
+    piocherCarte(joueurActif.id);
+    passerAuTourSuivant();
+  }, 900);
+
+  return () => {
+    clearTimeout(timer);
+  };
+}, [
+  etat.indexJoueurActif,
+  etat.statut,
+  etat.joueurs,
+  peutJouerCarte,
+  jouerCarte,
+  piocherCarte,
+  passerAuTourSuivant,
+]);
+
   return (
     <PlateauJeu
       joueurs={etat.joueurs}
@@ -99,5 +147,7 @@ function Game() {
     />
   );
 }
+
+
 
 export default Game;
